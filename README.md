@@ -8,7 +8,7 @@
 ## Установка для Windows
 
 - поставить https://git-for-windows.github.io/
-- скрипты кидать в папку C:\Users\user\AppData\Local\Programs\Git\usr\bin
+- скрипты кидать в папку пользователя с git, например `C:\Users\user\AppData\Local\Programs\Git\usr\bin`
 - или C:\Users\user\bin (придется настраивать переменные окружения)
 
 TODO или написать скрипт для ./install - чтобы делал это автоматически
