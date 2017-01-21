@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# TODO check exists
+source "$HOME/bin/init"
+current_path=$(pwd)
+# TODO check exists
+source "$(pwd)/../../../.env"
+
+# clear old version
+if [ -d .last_version ]
+then
+	rm -R .last_version
+fi
+if [ -f .last_version.zip ]
+then
+	rm .last_version.zip
+fi
+
+# make full copy
+mkdir .last_version
+for f in $(find | grep -v ".dev" | grep -v ".git" | grep -v "screenshots")
+do
+	if [ -f "$f" ]
+	then
+		cp --parents "$f" .last_version
+	fi
+done
+
+# convert lang files to windows-1251
+for f in $(find .last_version | grep /lang/ | grep .php)
+do
+	iconv -f UTF-8 -t WINDOWS-1251 -c "$f" > tmp
+	mv -f tmp "$f"
+done
+
+# TODO rewrite to tar.gz
+zip -r .last_version.zip .last_version
