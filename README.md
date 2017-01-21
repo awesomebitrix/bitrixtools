@@ -17,12 +17,19 @@ TODO или написать скрипт для ./install - чтобы дела
 
 Запускаются из папки модуля, например `/bitrix/modules/partner.module1`
 
-### bitrix-module-create
+### bitrix-mod-new
 
 TODO создает пустой модуль
 
-### bitrix-module-build
+### bitrix-mod-pack
 
 Собирает пакет в архив tar.gz
-
 ...
+
+### bitrix-mod-packupdates
+
+TODO Создает архив обновлений
+
+### bitrix-mod-publish
+
+TODO заливает в маркетплейс - посмотреть api или через логинится и эмулировать загрузку через форму
