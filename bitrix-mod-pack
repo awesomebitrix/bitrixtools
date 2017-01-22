@@ -1,37 +1,46 @@
 #!/bin/bash
 
-# TODO check exists
-source "$HOME/bin/init"
+# init main script
+if [ -f "$HOME/bin/init" ]
+then
+	source "$HOME/bin/init"
+fi
+
 current_path=$(pwd)
-# TODO check exists
-source "$(pwd)/../../../.env"
+dest=.last_version.tar.gz
+tmp_folder=.last_version
+
+# init site config - from module path
+if [ -f "$(pwd)/../../../.env" ]
+then
+	source "$(pwd)/../../../.env"
+fi
 
 # clear old version
-if [ -d .last_version ]
+if [ -d "$tmp_folder" ]
 then
-	rm -R .last_version
+	rm -R "$tmp_folder"
 fi
-if [ -f .last_version.zip ]
+if [ -f "$dest" ]
 then
-	rm .last_version.zip
+	rm "$dest"
 fi
 
 # make full copy
-mkdir .last_version
+mkdir "$tmp_folder"
 for f in $(find | grep -v ".dev" | grep -v ".git" | grep -v "screenshots")
 do
 	if [ -f "$f" ]
 	then
-		cp --parents "$f" .last_version
+		cp --parents "$f" "$tmp_folder"
 	fi
 done
 
 # convert lang files to windows-1251
-for f in $(find .last_version | grep /lang/ | grep .php)
+for f in $(find "$tmp_folder" | grep /lang/ | grep .php)
 do
 	iconv -f UTF-8 -t WINDOWS-1251 -c "$f" > tmp
 	mv -f tmp "$f"
 done
 
-# TODO rewrite to tar.gz
-zip -r .last_version.zip .last_version
+tar -zcvf "$dest" "$tmp_folder"
