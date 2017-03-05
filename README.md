@@ -15,7 +15,7 @@ git clone https://github.com/rivetweb/bitrixtools && cd bitrixtools && ./.instal
 
 Запускаются из папки модуля, например `/bitrix/modules/partner.module1`
 
-### bitrix-php-lint
+### bitrix-php-check
 
 Проверка на синтаксические ошибки php-интерпретатором. Прописать в $HOME/bin/init путь к интерпретатору, например php 5.3:
 ```
