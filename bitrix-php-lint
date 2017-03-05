@@ -11,4 +11,4 @@ then
 fi
 
 $PHPBITRIX -v
-find . -type f -name "*.php" -exec $PHPBITRIX -l {} \;
+find . -type f -name "*.php" ! -name "*.php7.php"  -exec $PHPBITRIX -l {} \;
