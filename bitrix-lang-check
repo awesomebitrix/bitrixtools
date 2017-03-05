@@ -1,0 +1,10 @@
+
+# init main script
+if [ -f "$HOME/bin/init" ]
+then
+	source "$HOME/bin/init"
+fi
+
+#find . -type f -name "*.php" ! -path "./lang/*" -exec grep -HlEo "[А-Яа-яЁё]*" {} \;
+
+find . -type f -name "*.php" ! -path "./lang/*" -exec grep -HEo "[А-Яа-яЁё]*" {} \;
