@@ -28,7 +28,8 @@ fi
 
 # make full copy
 mkdir "$tmp_folder"
-for f in $(find | grep -v ".dev" | grep -v ".git" | grep -v "screenshots" | grep -v "bin")
+for f in $(find | grep -v ".dev" | grep -v ".git" | grep -v "screenshots" | grep -v "bin" \
+	| grep -v "sublime" | grep -v "_config.yml")
 do
 	if [ -f "$f" ]
 	then

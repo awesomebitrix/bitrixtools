@@ -11,4 +11,7 @@ then
 fi
 
 $PHPBITRIX -v
-find . -type f -name "*.php" ! -name "*.php7.php"  -exec $PHPBITRIX -l {} \;
+find . -type f -name "*.php" \
+	! -name "*.php7.php" \
+	! -path "./.last_version/*" \
+	-exec $PHPBITRIX -l {} \;
