@@ -16,6 +16,13 @@ TODO или написать скрипт для ./install - чтобы дела
 
 Запускаются из папки модуля, например `/bitrix/modules/partner.module1`
 
+### bitrix-php-lint
+
+Проверка на ошибки php-интерпретатором. Прописать в $HOME/bin/init путь к интерпретатору, например php 5.3:
+```
+PHPBITRIX="C:/Users/user/Bitrix/apache2/zendserver/bin/php.exe"
+```
+
 ### bitrix-mod-new
 
 - TODO создает пустой модуль

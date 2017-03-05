@@ -1,0 +1,14 @@
+
+# init main script
+if [ -f "$HOME/bin/init" ]
+then
+	source "$HOME/bin/init"
+fi
+
+if [ -z "$PHPBITRIX" ]
+then
+	PHPBITRIX="php"
+fi
+
+$PHPBITRIX -v
+find . -type f -name "*.php" -exec $PHPBITRIX -l {} \;
