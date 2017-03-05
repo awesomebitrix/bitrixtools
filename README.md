@@ -1,16 +1,15 @@
 
 # Утилиты для CMS Bitrix
 
-## Установка для Windows
+## Установка
 
-- поставить https://git-for-windows.github.io/
-- скрипты из данного репозитария скопировать в папку пользователя с установленным git, например `C:\Users\user\AppData\Local\Programs\Git\usr\bin` (чтоб не прописывать переменные окружения)
+1) Для Windows нужно установить https://git-for-windows.github.io/
 
-## Установка для Linux
-
-- скопировать скрипты в ~/bin (папка пользователя ~/bin должна быть добавлена в переменную окружения PATH)
-
-TODO или написать скрипт для ./install - чтобы делал это автоматически
+2) **Скрипт обновления утилит** - `.install` - копирует утилиты для доступа из командной строки
+```
+cd ~/bin
+git clone https://github.com/rivetweb/bitrixtools && cd bitrixtools && ./.install
+```
 
 ## Команды
 

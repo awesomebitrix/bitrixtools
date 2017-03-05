@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# check available tools
+#		C:\Users\user\AppData\Local\Programs\Git\mingw64\bin
+#		C:\Users\user\AppData\Local\Programs\Git\usr\bin
+
+if [ "$OSTYPE" == "msys" ]
+then
+	# for Windows (msys git)
+	#		copy to C:\Users\user\AppData\Local\Programs\Git\usr\bin
+	cp * /usr/bin/
+fi
+
+if [ -d ~/bin/ ]
+then
+	cp * ~/bin/
+	# fix Windows end of line for bash scripts and make file executable
+	for f in ~/bin/*;
+	do
+		if [ -f $f ]; then
+			dos2unix $f
+			chmod +x $f
+		fi
+	done
+fi
