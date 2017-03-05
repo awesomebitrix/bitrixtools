@@ -17,7 +17,7 @@ git clone https://github.com/rivetweb/bitrixtools && cd bitrixtools && ./.instal
 
 ### bitrix-php-lint
 
-Проверка на ошибки php-интерпретатором. Прописать в $HOME/bin/init путь к интерпретатору, например php 5.3:
+Проверка на синтаксические ошибки php-интерпретатором. Прописать в $HOME/bin/init путь к интерпретатору, например php 5.3:
 ```
 PHPBITRIX="C:/Users/user/Bitrix/apache2/zendserver/bin/php.exe"
 ```
