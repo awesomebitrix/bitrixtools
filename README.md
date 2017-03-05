@@ -24,7 +24,7 @@ PHPBITRIX="C:/Users/user/Bitrix/apache2/zendserver/bin/php.exe"
 
 ### bitrix-lang-check
 
-Проверка на наличие кирилического текста в файлах php, папка lang не учитывается при проверке.
+Проверка на наличие кириллического текста в файлах php, папка lang не учитывается при проверке.
 
 ### bitrix-mod-new
 
